@@ -1,5 +1,6 @@
 # Drada
-A macro system of functions I'm standardizing.
+## Data Recycling Under Ambiguous Domain Applications
+This is a subset within Awasunu and Naked Lisp (ala Nuerisupu). A macro system of functions I'm standardizing.
 
 ## An Example In C
 This is mainly for producing C interop from the main scripting language.
