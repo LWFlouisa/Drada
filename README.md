@@ -2,7 +2,7 @@
 A macro system of functions I'm standardizing.
 
 ## An Example In C
-~~~
+~~~c
 #include <stdio.h>
 #include <./src/DradaC/DradaC.c/>
 
