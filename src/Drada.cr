@@ -229,6 +229,74 @@ class ReinforcementStructures
   end
 end
 
+class BoundaryConditions
+  # But that
+  def cemasi(*args)
+    that_label,      that_discrete,
+    but_that_label,  but_that_discrete,
+    otherwise_label, otherwise_discrete = args
+
+    x, y, z = that_discrete, but_that_discrete, otherwise_discrete
+
+    if    x > 80
+      puts "#{that_label} is above the threshold as #{that_discrete}."
+    elsif x < 20
+      puts "#{that_label} is below the threshold as #{that_discrete}."
+    else
+      puts "#{that_label} is in an ambiguous state at #{that_discrete}."
+    end
+
+    if    y > 80
+      puts "#{but_that_label} is above the threshold as #{but_that_discrete}."
+    elsif y < 20
+      puts "#{but_that_label} is below the threshold as #{but_that_discrete}."
+    else
+      puts "#{but_that_label} is in an ambiguous state at #{but_that_discrete}."
+    end
+
+    if    z > 80
+      puts "#{otherwise_label} is above the threshold as #{otherwise_discrete}."
+    elsif z < 20
+      puts "#{otherwise_label} is below the threshold as #{otherwise_discrete}."
+    else
+      puts "#{otherwise_label} is in an ambiguous state at #{otherwise_discrete}."
+    end
+  end
+
+  # Course graining / Wasei-Eigo: But that ( probabilistic )
+  def soshika(*args)
+    that_label,      that_discrete,
+    but_that_label,  but_that_discrete,
+    otherwise_label, otherwise_discrete = args
+
+    x, y, z = that_discrete, but_that_discrete, otherwise_discrete
+
+    if    x > 0.80
+      puts "#{that_label} is above the threshold as #{that_discrete}."
+    elsif x < 0.20
+      puts "#{that_label} is below the threshold as #{that_discrete}."
+    else
+      puts "#{that_label} is in an ambiguous state at #{that_discrete}."
+    end
+
+    if    y > 0.80
+      puts "#{but_that_label} is above the threshold as #{but_that_discrete}."
+    elsif y < 0.20
+      puts "#{but_that_label} is below the threshold as #{but_that_discrete}."
+    else
+      puts "#{but_that_label} is in an ambiguous state at #{but_that_discrete}."
+    end
+
+    if    z > 0.80
+      puts "#{otherwise_label} is above the threshold as #{otherwise_discrete}."
+    elsif z < 0.20
+      puts "#{otherwise_label} is below the threshold as #{otherwise_discrete}."
+    else
+      puts "#{otherwise_label} is in an ambiguous state at #{otherwise_discrete}."
+    end
+  end
+end
+
 ###################################################################################################
 #                                   Dynamic Enemy Stat Allocation                                 #
 ###################################################################################################
