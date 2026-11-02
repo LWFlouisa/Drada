@@ -12,7 +12,7 @@ int main(void) {
   description("Awasunu", "Compiled in Linus Torvalds Kernel");
 
   osv(objet("Le", "pomme"), sujet("je"), verb("mangeon"));
-  sov(sujet("vous"), objet("le", "pomme"), verb("mangeon"));
+  sov(sujet("vous"), objet("le", "banane"), verb("mangeon"));
 
   return 0;
 }
