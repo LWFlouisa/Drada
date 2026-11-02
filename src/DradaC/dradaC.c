@@ -17,5 +17,9 @@ void vos(char v[], char o[], char s[]) {
 /* #                                     Introductions                                     # */
 /* ######################################################################################### */
 void nom(char nom[]) {
-  printf("Mes nom est %s.", nom);
+  printf("Mes nom est %s. ", nom);
+}
+
+void qui(char qui[]) {
+  print("Sont vous %s. ", qui);
 }
