@@ -3,7 +3,7 @@
 This is a subset within Awasunu and Naked Lisp (ala Nuerisupu). A macro system of functions I'm standardizing.
 
 ## An Example In C
-This is mainly for producing C interop from the main scripting language.
+This is mainly for producing C interop from the main scripting language as an embedded DSL.
 
 ~~~c
 #include <stdio.h>
