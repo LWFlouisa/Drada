@@ -7,7 +7,7 @@ This is mainly for producing C interop from the main scripting language as an em
 
 ~~~c
 #include <stdio.h>
-#include <./src/DradaC/DradaC.c/>
+#include "./src/DradaC/DradaC.c"
 
 int main(void) {
   description("Awasunu", "Compiled in Linus Torvalds Kernel");
