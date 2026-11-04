@@ -194,8 +194,8 @@ void hauntecabine(char location[], char hante[]) {
 /* ######################################################################################### */
 /* #                            Machine Learning Functionality                             # */
 /* ######################################################################################### */
-void hlim(char title[], char clemot[], char symbolique_une[], char numot_une[], char symbolique_deux[], char numot_deux[], char symbolique_trois[], char numot_trois[]) {
-  printf("(encrireln %s)", title);
-  printf("(%s 2 %s %s %s %s %s %s)", clemot, symbolique_une, numot_une, symbolique_deux, numot_deux, symbolique_trois, numot_trois);
-  printf("(espace)");
+void hlim(char title[], char symbolique_une[], char numot_une[], char symbolique_deux[], char numot_deux[], char symbolique_trois[], char numot_trois[]) {
+  printf("(encrireln %s)\n", title);
+  printf("(hlim 2 %s %s %s %s %s %s)\n", symbolique_une, numot_une, symbolique_deux, numot_deux, symbolique_trois, numot_trois);
+  printf("(espace)\n");
 }
