@@ -10,6 +10,8 @@ Do Not Assume because we met before that you have permission to change or alter 
 
 <b>Intellectual Property</b> Do not submit AI Slop as contributions, or steal from other developers when submitting code in pull requests or in the issues panel. Or any other format where user-submissions are taken. This includes stealing my webcomic assets to sell them back to me.
 
+<b>Misuse Of Code Of Conduct</b> Do not leverage or misuse these terms of service to justify repository take over and theft. People that do that will be blocked and reported to github immediatly.
+
 ### Technical Requirements / Guidelines
 <b>Drada Specific</b> Do not request support or implementation in any other compiler besides GCC, except for ones I make myself. This is not intended for proprietary operating system. This is neither a traditionally compiled language or interpreted, closer to Lisp with Ruby byte code.
 
