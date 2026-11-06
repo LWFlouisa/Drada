@@ -9,31 +9,6 @@
 # issue of catestrophic forgetting in AI models.                                          #
 ###########################################################################################
 module Obelisk
-  class Quips
-    def self.floating_finger(a, b)
-      right = [":right_finger", a.split(" ")]
-      left  = [":left_finger",  b.split(" ")]
-
-      floating = [":floating_finger", right[1][1], left[1][0]]
-
-      Obelisk::DataRecycling.obelisk("#{floating[0]} #{floating[1]} #{floating[2]}")
-
-      puts "#{floating[0]} #{floating[1]} #{floating[2]}"
-    end
-
-    def self.spooney(first_word, second_word)
-      first_replacement = first_word.split("")
-      second_replacement = second_word.split("")
-
-      spooned_first = first_word.tr first_replacement[0], second_replacement[0]
-      spooned_second = second_word.tr second_replacement[0], first_replacement[0]
-
-      Obelisk::DataRecycling.obelisk("#{spooned_first} #{spooned_second}")
-      
-      "#{spooned_first} #{spooned_second}"
-    end
-  end
-  
   class DataRecycling
     macro obelisk_method(obelisk_method_name, obelisk_output, obelisk_content)
       def {{obelisk_method_name}}
