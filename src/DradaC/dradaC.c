@@ -1,11 +1,14 @@
 /* ######################################################################################### */
 /* #                                     Introductions                                     # */
 /* ######################################################################################### */
+/* # This particular section I'm unsure whether I'm going to end up using for transpiling  # */
+/* # and rather as a way of seeing aspects of the language can work in C.                  # */
+/* ######################################################################################### */
 void nom(char nom[]) {
   printf("Mes nom est %s. ", nom);
 }
 
-void qui(char buttai[]) {
+void buttai(char buttai[]) {
   printf("C'est un/une %s. ", buttai);
 }
 
@@ -88,107 +91,138 @@ void nigenkei(char a[]) {
 /* #                                        Basic DSL                                      # */
 /* ######################################################################################### */
 void encrire(char input[]) {
-  printf("%s", input);
+  printf("(encrire %s)", input);
 }
 
 void encrireln(char input[]) {
-  printf("%s\n", input);
+  printf("(encrireln %s)", input);
 }
 
 void pgram(char v[], char o[], char s[]) {
-  printf("['%s', '%s', '%s']", v, o, s);
+  printf("(parle_grammaire %s %s %s)", v, o, s);
 }
 
 void ntupe(char v[], char o[], char s[]) {
-  printf("['%s', '%s', '%s']", v, o, s);
+  printf("(nihongotupelo %s %s %s)", v, o, s);
 }
 
 void express(char phrase_one[], char phrase_two[]) {
-  printf("%s%s", phrase_one, phrase_two);
+  printf("(expression %s %s)", phrase_one, phrase_two);
 }
+
+/* ######################################################################################### */
+/* #                            Transpilation Functions Below Here                         # */
+/* ######################################################################################### */
+/* # Here on out the purpose of this DSL will be primarily for transpiling to Awasunu      # */
+/* # rather than operating directly within C itself. Mostly to offline some of the hosting # */
+/* # until this can be self-compiled.                                                      # */
+/* ######################################################################################### */
 
 /* ######################################################################################### */
 /* #                                       Word Order                                      # */
 /* ######################################################################################### */
 void osv(char o[], char s[], char v[]) {
-  printf("%s %s %s, ", o, s, v);
+  printf("(osv %s %s %s)", o, s, v);
 }
 
 void sov(char s[], char o[], char v[]) {
-  printf("%s %s %s.\n", s, o, v);
+  printf("(sov %s %s %s)\n", s, o, v);
 }
 
 void vos(char v[], char o[], char s[]) {
-  printf("%s %s %s.\n", v, o, s);
+  printf("(vos %s %s %s.)\n", v, o, s);
 }
 
 /* ######################################################################################### */
 /* #                               French Contrastive Logic                                # */
 /* ######################################################################################### */
 void cette(char noun[], char adjective[]) {
-  printf("Cette %s c'est %s.", noun, adjective);
+  printf("(cette %s %s)\n", noun, adjective);
 } 
 
 void maisette(char noun[], char adjective[]) {
-  printf("Mais cette %s c'est %s.", noun, adjective);
+  printf("(maisette %s %s)\n", noun, adjective);
 } 
 
 void sinon(char noun[], char adj_une[], char adj_deux[], char adj_trois[]) {
-  printf("Sinon n'est %s ne %s ou %s, mais c'est %s.", noun, adj_une, adj_deux, adj_trois);
+  printf("(sinon %s %s %s %s)\n", noun, adj_une, adj_deux, adj_trois);
 }
 
 void necette(char noun[], char adjective[]) {
-  printf("Cette %s n'est %s.", noun, adjective);
+  printf("necette %s %s.\n", noun, adjective);
 } 
 
 void nemaisette(char noun[], char adjective[]) {
-  printf("Mais cette %s n'est %s.", noun, adjective);
+  printf("(nemaisette %s %s)\n", noun, adjective);
 } 
 
 void nesinon(char noun[], char adj_une[], char adj_deux[], char adj_trois[]) {
-  printf("Sinon c'est %s ne %s ou %s, mais n'est %s.", noun, adj_une, adj_deux, adj_trois);
+  printf("(sinon %s %s %s %s)\n", noun, adj_une, adj_deux, adj_trois);
 } 
 
 /* ######################################################################################### */
 /* #                           Negative Constraint Satisfaction                            # */
 /* ######################################################################################### */
 void ne(char first_noun[], char second_noun[]) {
-  printf("Ne %s our %s, ", first_noun, second_noun);
+  printf("(ne %s %s)\n", first_noun, second_noun);
 }
 
 void mais(char third_noun[]) {
-  printf("%s.\n", third_noun);
+  printf("(mais %s)\n", third_noun);
 }
 
-void nai(char first_noun[], char second_noun[]) {
-  printf("Ne %s our %s, ", first_noun, second_noun);
-}
+//void nai(char first_noun[], char second_noun[]) {
+//  printf("(nai %s %s)", first_noun, second_noun);
+//}
 
-void shikashi(char third_noun[]) {
-  printf("%s.\n", third_noun);
-}
+//void shikashi(char third_noun[]) {
+//  printf("(shikashi %s)\n", third_noun);
+//}
 
 /* ################################################################################################ */
 /* #                                Conlang Specific Functionality                                # */
 /* ################################################################################################ */
 void yumemoire(char agent[], char location[]) {
-  printf("%s has been transported to %s.", agent, location);
+  printf("(yumemoire %s %s)", agent, location);
 }
 
 void posedonokitano(char agent[], char enemy[]) {
-  printf("%s utilisent le posedonokitano et coupe le %s.", agent, enemy);
+  printf("(posedonokitano %s %s)", agent, enemy);
 }
 
 void sanadforutese(char sender[], char reciever[]) {
-  printf("%s encrivant un lettre pour %s.", sender, reciever);
+  printf("(sanadforutese %s %s)", sender, reciever);
 }
 
 void yokenozen(char agent[], char location[]) {
-  printf("%s est en %s.", agent, location);
+  printf("(yokenozen %s %s)", agent, location);
 }
 
 void hauntecabine(char location[], char hante[]) {
-  printf("%s est hante par %s.", location, hante);
+  printf("(hauntecabine %s %s)", location, hante);
+}
+
+/* ######################################################################################### */
+/* #                                Transpiling To Awasunu                                 # */
+/* ######################################################################################### */
+void obelisk_one(char old_data[]) {
+  printf("(obelisk1 %s)", old_data);
+  printf("(scash)");
+}
+
+void obelisk_two(char first_datapoint[], char second_datapoint[]) {
+  printf("(obelisk1 %s %s)", first_datapoint, second_datapoint);
+  printf("(scash)");
+}
+
+void obelisk_tre(char first_datapoint[], char second_datapoint[], char third_datapoint[]) {
+  printf("(obelisk1 %s %s %s)", first_datapoint, second_datapoint, third_datapoint);
+  printf("(scash)");
+}
+
+void obelisk_fro(char first_datapoint[], char second_datapoint[], char third_datapoint[], char fourth_datapoint[]) {
+  printf("(obelisk1 %s %s %s %s)", first_datapoint, second_datapoint, third_datapoint, fourth_datapoint);
+  printf("(scash)");
 }
 
 /* ######################################################################################### */
