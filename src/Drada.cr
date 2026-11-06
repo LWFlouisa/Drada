@@ -311,7 +311,7 @@ class Filters
   end
 
   # The collission between floating fingers and spoonerisms.
-  def self.ocasbesce(a, b, c, d, file_name) # ocaoh_sbeliskr
+  def self.ocasbesce(a, b, c, d) # ocaoh_sbeliskr
     if a.nil?
       puts "Erreur: Il y es ne ocasbesce de [A]."
     end
@@ -328,53 +328,59 @@ class Filters
       puts "Erreur: Il y es ne ocasbesce de [D]."
     end
 
-    new_finger = floating_finger(spooney(a, b), spooney(c, d))
-
-    Filters.transpile(file_name, new_finger)
+    floating_finger(spooney(a, b), spooney(c, d))
   end
 
-  def self.cana_sunos(a, b, c, d, file_name)
+  def self.cana_sunos(a, b, c, d)
     if a.nil?
-      puts "Erreur: Il y es ne ocasbesce de [A]."
+      puts "Erreur: Il y es ne cana_sunos de [A]."
     end
 
     if b.nil?
-      puts "Erreur: Il y es ne ocasbesce de [B]."
+      puts "Erreur: Il y es ne cana_sunos de [B]."
     end
 
     if c.nil?
-      puts "Erreur: Il y es ne ocasbesce de [C]."
+      puts "Erreur: Il y es ne cana_sunos de [C]."
     end
 
     if d.nil?
-      puts "Erreur: Il y es ne ocasbesce de [D]."
+      puts "Erreur: Il y es ne cana_sunos de [D]."
     end
 
-    new_finger = floating_finger(spooney(a, b), spooney(c, d))
-
-    Filters.transpile(file_name, new_finger)
+    floating_finger(spooney(a, b), spooney(c, d))
   end
 
-  def self.ocatfasba(a, b, c, d, file_name)
+  def self.ocatfasba(a, b, c, d)
     if a.nil?
-      puts "Erreur: Il y es ne ocasbesce de [A]."
+      puts "Erreur: Il y es ne ocatfasba de [A]."
     end
 
     if b.nil?
-      puts "Erreur: Il y es ne ocasbesce de [B]."
+      puts "Erreur: Il y es ne ocatfasba de [B]."
     end
 
     if c.nil?
-      puts "Erreur: Il y es ne ocasbesce de [C]."
+      puts "Erreur: Il y es ne ocatfasba de [C]."
     end
 
     if d.nil?
-      puts "Erreur: Il y es ne ocasbesce de [D]."
+      puts "Erreur: Il y es ne ocatfasba de [D]."
     end
 
-    new_finger = floating_finger(spooney(a, b), spooney(c, d))
+    floating_finger(spooney(a, b), spooney(c, d))
+  end
 
-    Filters.transpile(file_name, new_finger)
+  def self.predict_spoon(*args)
+    search_space, file_name, a, b, c, d,
+                             e, f, g, h,
+                             i, j, k, l = args
+
+    first_finger  = floating_finger(spooney(a, b), spooney(c, d))
+    second_finger = floating_finger(spooney(e, f), spooney(g, h))
+    third_finger  = floating_finger(spooney(i, j), spooney(k, l))
+
+    Filters.transpile(file_name, "hlim #{search_space} #{first_finger} #{second_finger} #{third_finger}")
   end
 end
 
