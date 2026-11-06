@@ -233,3 +233,15 @@ void hlim(char title[], char symbolique_une[], char numot_une[], char symbolique
   printf("(hlim 2 %s %s %s %s %s %s)\n", symbolique_une, numot_une, symbolique_deux, numot_deux, symbolique_trois, numot_trois);
   printf("(espace)\n");
 }
+
+/* Adaptation of Find Predessors in NeoPathfinding now called trouve_de_predecateur*/
+void troupre(char ident_one[], char ident_two[], char ident_tre[], char document_one[], char document_two[], char document_tre[], char mort_designe_one[], char mort_designe_two, mort_designe_tre[]) {
+  printf("(encrireln POSSIBLE IDENTITY)");
+  printf("(hlim 2 :identity_one %s :identiy_two %s :identity_tre %S)\n", ident_one, ident_two, ident_tre);
+
+  printf("(encrireln POSSIBLE DOCUMENTED PRESENCE)");
+  printf("(hlim 2 :document_one %s :document_two %s :document_tre %S)\n", document_one, document_two, document_tre);
+
+  printf("(encrireln MORT DESIGNE)");
+  printf("(hlim 2 :mort_designe_one %s :mort_designe_two %s :mort_designe_tre %S)\n", document_one, document_two, document_tre);
+}
