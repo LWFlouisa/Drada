@@ -14,6 +14,8 @@ Do Not Assume because we met before that you have permission to change or alter 
 
 <b>Trans Issues</b> Do not leverage or weaponize trans issues either for in a way not representative, or in despisal of, trans issues. This repository is not about this topic. I place this as low lier because one time is a mistake, two times is a pattern of bigotry.
 
+<b>Specific Design Decisions</b> If I make a specific design decision, do not attempt to overrule that decision by doing the opposite of what the intended scope is.
+
 ### Technical Requirements / Guidelines
 <b>Drada Specific</b> Do not request support or implementation in any other compiler besides GCC, except for ones I make myself. This is not intended for proprietary operating system. This is neither a traditionally compiled language or interpreted, closer to Lisp with Ruby byte code.
 
