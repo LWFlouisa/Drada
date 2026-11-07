@@ -367,6 +367,7 @@ class MatrixTypes
   end
 
   dmatrice self.level_three(a, b, c), [[[a, a, a], [a, a, b], [a, a, c]], [[b, b, a], [b, b, b], [b, b, c]], [[c, c, a], [c, c, b], [c, c, c]]]
+  dmatrice self.level_three_negative(a, b, c), [[[[a, a], [a, a], [a, a]], [[a, a], [a, a], [a, b]], [[c, a], [b, a], [a, c]]], [[[b, b], [b, b], [b, a]], [[b, b], [b, b], [b, b]], [[c, b], [b, b], [a, c]]], [[[c, c], [c, c], [c, a]], [[c, c], [c, c], [c, b]], [[c, c], [b, c], [a, c]]]]
 
   dmatrice self.level_six(a, b, c, d, e, f), [[[[a, a, a, a, a, a], [a, a, a, a, a, e], [a, a, a, a, a, b], [a, a, a, a, a, d], [a, a, a, a, a, f], [a, a, a, a, a, c]], [[e, e, e, e, e, a], [e, e, e, e, e, e], [e, e, e, e, e, b], [e, e, e, e, e, d], [e, e, e, e, e, f], [e, e, e, e, e, c]], [[b, b, b, b, b, a], [b, b, b, b, b, e], [b, b, b, b, b, b], [b, b, b, b, b, d], [b, b, b, b, b, f], [b, b, b, b, b, c]], [[d, d, d, d, d, a], [d, d, d, d, d, e], [d, d, d, d, d, b], [d, d, d, d, d, d], [d, d, d, d, d, f], [d, d, d, d, d, c]], [[f, f, f, f, f, a], [f, f, f, f, f, e], [f, f, f, f, f, b], [f, f, f, f, f, d], [f, f, f, f, f, f], [f, f, f, f, f, c]], [[c, c, c, c, c, a], [c, c, c, c, c, e], [c, c, c, c, c, b], [c, c, c, c, c, d], [c, c, c, c, c, f], [c, c, c, c, c, c]]]]
 
@@ -387,6 +388,7 @@ class SelectorTypes
   selector_set self.row1(a, b, c), [a, b, c].sample
   selector_set self.col1(a, b, c), [a, b, c].sample
   selector_set self.arr1(a, b, c), [a, b, c].sample
+  selector_set self.lim1(a, b),       [a, b].sample
 
   # Basic Two
   selector_set self.row2(a, b, c, d, e, f), [a, b, c, d, e, f].sample
