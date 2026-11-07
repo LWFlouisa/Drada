@@ -691,3 +691,120 @@ class MetricsOfAnalyticIncrementDiagnostics
   set_enemy_stats enemy_atk(enemy_level, player_atk, percent_increment), (player_atk * ( player_atk * percent_increment )) * enemy_level
   set_enemy_stats enemy_def(enemy_level, player_def, percent_increment), (player_def * ( player_def * percent_increment )) * enemy_level
 end
+
+def standard_ml_manual(*args)
+  a1, a2, p1, p4,
+  b1, b2, p2, p5,
+  c1, c2, p3, p6 = args
+
+  a = [a1, a2]
+  b = [b1, b2]
+  c = [c1, c2]
+  
+  cur_row = SelectorTypes.row1(0, 1, 2)
+  cur_col = SelectorTypes.col1(0, 1, 2)
+  cur_arr = SelectorTypes.arr1(0, 1, 2)
+
+  base_one = MatrixTypes.level_three(p1, p2, p3)[cur_row][cur_col][cur_arr]
+  base_two = MatrixTypes.level_three(p4, p5, p6)[cur_row][cur_col][cur_arr]
+
+  matrix = [MatrixTypes.level_three(a[0], b[0], c[0]),
+            MatrixTypes.level_three(a[1], b[1], c[1])]
+
+  current_symbol      = matrix[0][cur_row][cur_col][cur_arr]
+  current_description = matrix[1][cur_row][cur_col][cur_arr]
+  current_information = %Q([#{current_symbol}, "#{current_description}"])
+
+  current_probability = base_one * base_two
+
+  # Predict counterfactual symbol
+  File.write("data/statistics/symbol/current_label.txt",                 current_symbol)
+
+  # Predict counterfactual score
+  File.write("data/statistics/probability/current_probability.txt", current_probability)
+
+  # Assign information as counterfactual label
+  File.write("data/statistics/label/current_information.txt",            current_information)
+
+  # Create counterfactual description
+  File.write("data/statistics/description/current_description.txt",      current_description)
+
+  [current_symbol, current_description, current_probability]
+end
+
+def standard_ml_auto(*args)
+  a1, a2, b1, b2, c1, c2 = args
+
+  a = [a1, a2]
+  b = [b1, b2]
+  c = [c1, c2]
+  
+  cur_row = SelectorTypes.row1(0, 1, 2)
+  cur_col = SelectorTypes.col1(0, 1, 2)
+  cur_arr = SelectorTypes.arr1(0, 1, 2)
+
+  base_one = MatrixTypes.level_three(0.125,  0.3125, 0.999)[cur_row][cur_col][cur_arr]
+  base_two = MatrixTypes.level_three( 0.125, 0.3125, 0.999)[cur_row][cur_col][cur_arr]
+
+  matrix = [MatrixTypes.level_three(a[0], b[0], c[0]),
+            MatrixTypes.level_three(a[1], b[1], c[1])]
+
+  current_symbol      = matrix[0][cur_row][cur_col][cur_arr]
+  current_description = matrix[1][cur_row][cur_col][cur_arr]
+  current_information = %Q([#{current_symbol}, "#{current_description}"])
+
+  current_probability = base_one * base_two
+
+  # Predict counterfactual symbol
+  File.write("data/statistics/symbol/current_label.txt",                 current_symbol)
+
+  # Predict counterfactual score
+  File.write("data/statistics/probability/current_probability.txt", current_probability)
+
+  # Assign information as counterfactual label
+  File.write("data/statistics/label/current_information.txt",            current_information)
+
+  # Create counterfactual description
+  File.write("data/statistics/description/current_description.txt",      current_description)
+
+  [current_symbol, current_description, current_probability]
+end
+
+def hyper_ml_auto(*args)
+  a1, a2, b1, b2, c1, c2 = args
+
+  a = [a1, a2]
+  b = [b1, b2]
+  c = [c1, c2]
+  
+  cur_row = SelectorTypes.row1(0, 1, 2)
+  cur_col = SelectorTypes.col1(0, 1, 2)
+  cur_arr = SelectorTypes.arr1(0, 1, 2)
+  cur_lim = SelectorTypes.lim1(0, 1)
+
+  base_one = MatrixTypes.level_three(0.125,  0.3125, 0.999)[cur_row][cur_col][cur_arr]
+  base_two = MatrixTypes.level_three( 0.125, 0.3125, 0.999)[cur_row][cur_col][cur_arr]
+
+  matrix = [MatrixTypes.level_three(a[0], b[0], c[0]),
+            MatrixTypes.level_three(a[1], b[1], c[1])]
+
+  current_symbol      = matrix[0][cur_row][cur_col][cur_arr][cur_lim]
+  current_description = matrix[1][cur_row][cur_col][cur_arr][cur_lim]
+  current_information = %Q([#{current_symbol}, "#{current_description}"])
+
+  current_probability = base_one * base_two
+
+  # Predict counterfactual symbol
+  File.write("data/statistics/symbol/current_label.txt",                 current_symbol)
+
+  # Predict counterfactual score
+  File.write("data/statistics/probability/current_probability.txt", current_probability)
+
+  # Assign information as counterfactual label
+  File.write("data/statistics/label/current_information.txt",            current_information)
+
+  # Create counterfactual description
+  File.write("data/statistics/description/current_description.txt",      current_description)
+
+  [current_symbol, current_description, current_probability]
+end
