@@ -1,3 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void collect(char a[], char b[], char c[]) {
+  char *matrix[3][3][3] = {
+    {{a, a, a},
+     {a, a, b},
+     {a, a, c}},
+
+    {{b, b, a},
+     {b, b, b},
+     {b, b, c}},
+
+    {{c, c, a},
+     {c, c, b},
+     {c, c, c}},
+  };
+
+  srand((unsigned)time(NULL));
+
+  int row_options = 3; //{0, 1, 2};
+  int col_options = 3; //{0, 1, 2};
+  int arr_options = 3; //{0, 1, 2};
+
+  int cr = rand() % row_options;
+  int cc = rand() % col_options;
+  int ca = rand() % arr_options;
+
+  printf("%s ", matrix[cr][cc][ca]);
+}
+
 /* ######################################################################################### */
 /* #                                     Introductions                                     # */
 /* ######################################################################################### */
